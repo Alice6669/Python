@@ -1,22 +1,71 @@
-# Curso de Python
+# 🐍 Repositório de Projetos Python
 
-Repositório com materiais de aprendizado e exercícios práticos de Python referente ao curso de Python 3 de Luíz Otávio miranda
-feito na Udemy.
+Repositório pessoal com diversos projetos e exercícios práticos de **Python 3**, incluindo materiais do curso de Python 3 de **Luíz Otávio Miranda** da Udemy e outros projetos desenvolvidos independentemente.
+
+---
 
 ## 📋 Descrição
 
-Este projeto reúne conteúdos, exemplos de código e exercícios para o aprendizado de Python, desde conceitos básicos até tópicos mais avançados.
+Este repositório reúne conteúdos estruturados, exemplos de código, exercícios práticos e projetos pessoais para o aprendizado e prática de Python. Inclui:
+
+- **Pasta do Curso:** Materiais e exercícios do curso de Python 3 da Udemy
+- **Projetos Extras:** Exercícios adicionais desenvolvidos independentemente
+- **Desafios e Práticas:** Projetos pessoais e desafios de programação
+
+---
 
 ## 💻 Tecnologias
 
-- **Linguagem:** Python
-- **Tema:** Programação em Python
+|       Tecnologia       |             Descrição              |
+|------------------------|------------------------------------|
+|     **Python 3**       | Linguagem de programação principal |
+|    **Git/GitHub**      |          Controle de versão        |
+
+---
 
 ## 📚 Conteúdo
 
-Este repositório inclui:
-- Conceitos fundamentais de Python
-- Estruturas de dados
-- Funções e programação orientada a objetos
-- Exercícios práticos
-- Exemplos de aplicações reais
+### ✅ Fundamentos de Python
+- Variáveis e tipos de dados
+- Operadores (aritméticos, lógicos, de comparação)
+- Estruturas condicionais (if, elif, else)
+- Estruturas de repetição (for, while)
+
+### 📊 Estruturas de Dados
+- Listas (list)
+- Tuplas (tuple)
+- Dicionários (dict)
+- Conjuntos (set)
+
+### 🔧 Funções e Programação Orientada a Objetos
+- Definição e chamada de funções
+- Parâmetros e retorno de valores
+- Classes e objetos
+- Herança e polimorfismo
+- Encapsulamento
+
+### 💡 Tópicos Avançados
+- Compreensões de lista (list comprehension)
+- Geradores e iteradores
+- Decoradores
+- Tratamento de exceções
+- Módulos e pacotes
+
+### 🎯 Exercícios Práticos
+- Exercícios do curso
+- Desafios extras independentes
+- Aplicações reais
+
+---
+
+## 📝 Notas
+
+- Os materiais do curso são baseados no **Curso de Python 3 de Luíz Otávio Miranda** (Udemy)
+- Exercícios extras e projetos são desenvolvimentos pessoais
+- Sinta-se à vontade para explorar, estudar e adaptar o código conforme necessário
+
+---
+
+## 📧 Contato
+
+Para dúvidas ou sugestões sobre os projetos, entre em contato através da sua conta do GitHub.
