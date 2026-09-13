@@ -97,7 +97,7 @@ while True:
             if parImparTentativas > 0:
                 parImparTentativas -= 1
                 if sorte():
-                    print(f"O {numeroTentado} é par" \
+                    print(f"O número sorteado é par" \
                         f"? {bool(numeroSorteado % 2 == 0)}")
                 else: 
                     print("Falhou")
