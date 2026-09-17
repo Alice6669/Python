@@ -117,7 +117,7 @@ while True:
     if contadorJogos > 0:
         seguirPadrão = coletorNumero("Você quer mudar os dados?\n(Não -> 0/Sim -> 1) ", [0, 1])
     if seguirPadrão != 0:
-        contadorJogos = 0
+        contadorJogos = 1
         empates = 0
 
         # Coletando simbolo a ser jogado
@@ -176,13 +176,13 @@ while True:
             venceu = simbologanhou(gradeVelha)
             if  venceu == 1:
                 jogador1Pontos += 1
-                print(f"{jogador1Nome} ganhou a partida {contadorJogos + 1}\n Placar: {jogador1Nome} " \
+                print(f"{jogador1Nome} ganhou a partida {contadorJogos}\n Placar: {jogador1Nome} " \
                     f"{jogador1Pontos} pontos | {jogador2Nome} {jogador2Pontos} pontos "\
                     f"| {empates} empates")
                 break
             elif venceu == 2:
                 jogador2Pontos += 1
-                print(f"{jogador2Nome} ganhou a partida {contadorJogos + 1}\n Placar: {jogador1Nome} " \
+                print(f"{jogador2Nome} ganhou a partida {contadorJogos}\n Placar: {jogador1Nome} " \
                 f"{jogador1Pontos} pontos | {jogador2Nome} {jogador2Pontos} pontos"\
                 f"| {empates} empates")
                 break
