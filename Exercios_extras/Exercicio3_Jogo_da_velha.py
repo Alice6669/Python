@@ -119,6 +119,7 @@ while True:
     if seguirPadrão != 0:
         contadorJogos = 1
         empates = 0
+        jogador2Pontos = 0
 
         # Coletando simbolo a ser jogado
         simboloJogador = "X"
@@ -136,10 +137,9 @@ while True:
         jogador1Pontos = 0
         if selecionarJogador == 1:
             jogador2Nome = input("Qual o nome do Jogador 2? ").capitalize()
-            jogador2Pontos = 0
         else:
             jogador2Nome = "Velha"
-            velhaPontos = 0
+           
     else:
         contadorJogos += 1
 
