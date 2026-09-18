@@ -12,9 +12,9 @@ def velha(gradeVelha: list[list[str]], simbolo: str):
             if (posicao == " "):
                 lugaresPosiveis.append(str(indice) + str(indiceInterno))
     posicao = random.randint(0, len(lugaresPosiveis)) - 1
-    if (lugaresPosiveis[posicao - 1][0] == "0"):
+    if (lugaresPosiveis[posicao][0] == "0"):
         gradeVelha[0][int(lugaresPosiveis[posicao][1])] = simbolo
-    elif (lugaresPosiveis[posicao - 1][0] == "1"):
+    elif (lugaresPosiveis[posicao][0] == "1"):
         gradeVelha[1][int(lugaresPosiveis[posicao][1])] = simbolo
     else:
         gradeVelha[2][int(lugaresPosiveis[posicao][1])] = simbolo
@@ -23,17 +23,24 @@ def velha(gradeVelha: list[list[str]], simbolo: str):
 # Jogador (Salvando jogada do jogador.)
 def jogador(gradeVelha: list[list[str]], simbolo: str):
     while True:
-        coluna = coletorNumero("Você quer jogar em qual linha? (0 a 2) ", [0, 1, 2])
-        linha = coletorNumero("Você quer jogar em qual coluna? (0 a 2) ", [0, 1, 2])
-        if jogadaPossivel(gradeVelha, coluna, linha) == True:
+        linha = coletorNumero("Você quer jogar em qual linha? (0 a 2) ", [0, 1, 2])
+        if jogadaPossivel(gradeVelha, linha, -1) == False:
+            continue
+        coluna = coletorNumero("Você quer jogar em qual coluna? (0 a 2) ", [0, 1, 2])
+        if jogadaPossivel(gradeVelha, linha, coluna) == True:
             break
         print("Local ocupado!")     
-    gradeVelha[coluna][linha] = simbolo
+    gradeVelha[linha][coluna] = simbolo
     return gradeVelha
 
 # Verificador de jogada possível.
-def jogadaPossivel(gradeVelha: list[list[str]], coluna: int, linha: int):
-    if gradeVelha[coluna][linha] == " ":
+def jogadaPossivel(gradeVelha: list[list[str]], linha: int, coluna: int = -1):
+    if coluna == -1:
+        for posicao in gradeVelha[linha]:
+            if posicao == " ":
+                return True
+        return False
+    if gradeVelha[linha][coluna] == " ":
         return True
     return False
 
@@ -139,9 +146,6 @@ while True:
             jogador2Nome = input("Qual o nome do Jogador 2? ").capitalize()
         else:
             jogador2Nome = "Velha"
-           
-    else:
-        contadorJogos += 1
 
     # Criando tabuleiro
     gradeVelha = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
@@ -176,19 +180,19 @@ while True:
             venceu = simbologanhou(gradeVelha)
             if  venceu == 1:
                 jogador1Pontos += 1
-                print(f"{jogador1Nome} ganhou a partida {contadorJogos}\n Placar: {jogador1Nome} " \
+                print(f"\n\n{jogador1Nome} ganhou a partida {contadorJogos}\n Placar: {jogador1Nome} " \
                     f"{jogador1Pontos} pontos | {jogador2Nome} {jogador2Pontos} pontos "\
                     f"| {empates} empates")
                 break
             elif venceu == 2:
                 jogador2Pontos += 1
-                print(f"{jogador2Nome} ganhou a partida {contadorJogos}\n Placar: {jogador1Nome} " \
+                print(f"\n\n{jogador2Nome} ganhou a partida {contadorJogos}\n Placar: {jogador1Nome} " \
                 f"{jogador1Pontos} pontos | {jogador2Nome} {jogador2Pontos} pontos"\
                 f"| {empates} empates")
                 break
             elif venceu == -1:
                 empates += 1
-                print(f"Deu empate!\n Placar: {jogador1Nome} " \
+                print(f"\n\nDeu empate!\n Placar: {jogador1Nome} " \
                     f"{jogador1Pontos} pontos | {jogador2Nome} {jogador2Pontos} pontos"\
                     f"| {empates} empates")
                 break
@@ -197,11 +201,12 @@ while True:
             break
         
     # Vendo se que jogar de novo.
-    jogarDeNovo = coletorNumero("Você quer Jogar de novo? (0->Não/1->Sim)", [0, 1])
+    jogarDeNovo = coletorNumero("Você quer Jogar de novo? (0->Não/1->Sim) ", [0, 1])
     if jogarDeNovo == 1:
         os.system("cls" if os.name == 'nt' else 'clear')
         continue
+    contadorJogos += 1
     break
 
 # Finalizando jogo.
-print(f"Fechando programa, número de jogos: {contadorJogos + 1}.")
+print(f"Fechando programa, número de jogos: {contadorJogos}.")
