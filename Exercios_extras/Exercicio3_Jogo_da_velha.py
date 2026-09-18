@@ -11,7 +11,7 @@ def velha(gradeVelha: list[list[str]], simbolo: str):
         for indiceInterno, posicao in enumerate(linha):
             if (posicao == " "):
                 lugaresPosiveis.append(str(indice) + str(indiceInterno))
-    posicao = random.randint(0, len(lugaresPosiveis)) - 1
+    posicao = random.randint(0, len(lugaresPosiveis) - 1)
     if (lugaresPosiveis[posicao][0] == "0"):
         gradeVelha[0][int(lugaresPosiveis[posicao][1])] = simbolo
     elif (lugaresPosiveis[posicao][0] == "1"):
@@ -202,10 +202,10 @@ while True:
         
     # Vendo se que jogar de novo.
     jogarDeNovo = coletorNumero("Você quer Jogar de novo? (0->Não/1->Sim) ", [0, 1])
+    contadorJogos += 1
     if jogarDeNovo == 1:
         os.system("cls" if os.name == 'nt' else 'clear')
         continue
-    contadorJogos += 1
     break
 
 # Finalizando jogo.
